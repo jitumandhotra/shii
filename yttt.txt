@@ -1,0 +1,20 @@
+<script>
+      fetch('/cart/update.js', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+        attributes: {
+            countdown_end_time: null // Replace with the attribute name you want to remove
+        }
+    }),
+})
+.then(response => response.json())
+.then(data => {
+    console.log('Cart updated, attribute removed:', data);
+})
+.catch(error => {
+    console.error('Error updating cart:', error);
+});
+    </script>
